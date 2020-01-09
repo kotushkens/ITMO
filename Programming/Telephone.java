@@ -3,7 +3,7 @@ package com.company;
 public class Telephone {
     private Telephone[] connections = new Telephone[5];
     private int connectionIndex = 0;
-    private int number;
+    int number;
     public Telephone(int number) {
         this.number = number;
     }
@@ -32,18 +32,18 @@ public class Telephone {
     }
 
 
-    public void call(Telephone accepter, String message) {
+    public void call(Telephone accepter, String message) throws HasNotConnection {
         if (hasConnection(accepter)) {
             System.out.println("Звонок совершен: c номера " + number + " на номер " + accepter.number);
             System.out.println("Во время звонка сказали: " + message);
-        } else System.out.println("Connetiona нема: " + number + " не смог дозвонитЬЬЬся до номера " + accepter.number);
+        } else throw new HasNotConnection("Connetiona нема: " + number + " не смог дозвонитЬЬЬся до номера " + accepter.number);
     }
 
-    public void accept(Telephone caller, String message) {
+    public void accept(Telephone caller, String message) throws HasNotConnection {
         if (hasConnection(caller)) {
             System.out.println("Звонок принят: номером " + number + " от номера " + caller.number);
             System.out.println("Во время звонка сказали: " + message);
-        } else System.out.println("Connectiona нема: " + number + " не смог принять звонок от номера " + caller.number);
+        } else throw new HasNotConnection("Connectiona нема: " + number + " не смог принять звонок от номера " + caller.number);
     }
 
 

@@ -40,7 +40,7 @@ public class Main {
         Skuperfild.telephone.addConnection(bargeDav.telephone);
         Skuperfild.telephone.addConnection(bargeSan.telephone);
 
-        //bargeDav.telephone.deleteConnection(Skuperfild.telephone);
+        bargeDav.telephone.deleteConnection(Skuperfild.telephone);
 
 	Skuperfild.call(Skuperfild.telephone, bargeDav.telephone);
 	bargeDav.getGorloderik().accept(bargeDav.telephone, Skuperfild.telephone);
@@ -54,6 +54,16 @@ public class Main {
 
         Skuperfild.move(new Coordinates(10, 15));
 
+        grabenberg.addCitizen(new Citizen("Dave", 12));
+        grabenberg.addKrikun(new Krikun("Molly", 12));
 
+        grabenberg.getCitizen().hit(grabenberg.getKrikun());
+
+        grabenberg.addStreet(new Street("Lenina", new Coordinates(15, 10) ));
+
+        Skuperfild.move(new Coordinates(15, 10));
+
+        Skuperfild.setTown(grabenberg);
+        Skuperfild.checkPlace();
     }
 }

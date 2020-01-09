@@ -3,6 +3,8 @@ package com.company;
 public class Street {
     String name;
     Coordinates coordinates;
-    int width;
-    int length;
+     public Street (String name, Coordinates coordinates) {
+         this.name = name;
+         this.coordinates = coordinates;
+     }
 }

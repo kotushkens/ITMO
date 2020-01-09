@@ -12,4 +12,12 @@ public class Coordinates {
     public int hashCode(){
          return (x*37 + y*51);
      }
+
+     @Override
+    public boolean equals(Object object){
+         boolean result = false;
+         if (hashCode() == object.hashCode())
+             result = true;
+         return result;
+     }
 }

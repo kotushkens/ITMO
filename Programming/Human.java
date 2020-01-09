@@ -8,6 +8,7 @@ public abstract class Human implements UsePhone, Moving {
     Home home;
     Barge barge;
     Street street;
+    int HP=5;
 
     public Human (String name, int age) {
         this.name = name;
@@ -15,6 +16,11 @@ public abstract class Human implements UsePhone, Moving {
     }
     public void setBarge(Barge barge){
         this.barge = barge;
+    }
+
+    public void hit(Human victim) {
+        victim.HP--;
+        System.out.println(name + " бьёт " + victim.name + " . Остаток здоровья у " + victim.name + " = " + victim.HP);
     }
 
     @Override

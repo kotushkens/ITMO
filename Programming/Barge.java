@@ -16,9 +16,6 @@ public class Barge implements Moving {
         this.coordinates = coordinates;
     }
 
-    public Town checkTown() {
-        return null;
-    }
 
     public Barge(Coordinates coordinates, Telephone telephone, String name) {
         this.coordinates = coordinates;
